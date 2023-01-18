@@ -46,3 +46,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 	Route::view('aulas', 'livewire.aulas.index')->middleware('auth');
 	Route::view('videojuegos', 'livewire.videojuegos.index')->middleware('auth');
 	Route::view('categorias', 'livewire.categorias.index')->middleware('auth');
+
+	//pdf form
+	Route::get('/jugadores-pdf', [\App\Http\Livewire\Jugadores::class, 'jugadoresPDF']);
+	Route::get('/horarios-pdf', [\App\Http\Livewire\Horarios::class, 'horariosPDF']);
+	Route::get('/inscripcionins-pdf', [\App\Http\Livewire\Inscripcionins::class, 'inscripcioninPDF']);
+	Route::get('/inscripciongrs-pdf', [\App\Http\Livewire\Inscripciongrs::class, 'inscripciongrPDF']);
+	Route::get('/partidagrs-pdf', [\App\Http\Livewire\Partidagrs::class, 'partidagrPDF']);
